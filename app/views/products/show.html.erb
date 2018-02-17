@@ -1,0 +1,56 @@
+<div class="Container-fluid">
+  <% cache @product do %>
+
+
+
+<p id="notice"><%= notice %></p>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div id="prod-img">
+          <%= image_tag(@product.image_url, width: "350", class: "img-zoom") %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <h2 id="prod-name"><%= @product.name.upcase %></h2>
+        <p>
+          <strong>description</strong>
+          <%= @product.description %>
+        </p>
+
+        <p>
+          <strong>price</strong>
+          <%= @product.price %> €
+        </p>
+
+        <p>
+          <strong>colour:</strong>
+          <%= @product.colour %>
+        </p>
+        <%= form_with(url: '/payments/create') do |form| %>
+            <%= form.hidden_field :product_id, :value =>  @product.id %>
+            <%= render partial: 'shared/stripe_checkout_button' %>
+        <% end %>
+
+        <%= link_to 'Edit', edit_product_path(@product) %> |
+        <%= link_to 'Back', products_path %>
+        <%= render 'new_comment' %>
+        <% if @comments.count > 0 %>
+        <%= render 'comments' %>
+        <% end %>
+
+        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+
+
+
+        <div class="pagination">
+          <%= will_paginate @comments %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <% end %>

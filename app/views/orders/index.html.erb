@@ -1,0 +1,32 @@
+<br ><h1>
+  My Orders
+</h1>
+<div class="row" align="center" style="margin-bottom: 50px;">
+  <% @orders.each do |order| %>
+      <div class="card col-md-12">
+        <h4 class="text-info">
+          Order #<%= order.id %>
+        </h4>
+        <%= link_to order.product do %>
+            <h4 class="text-success">
+              <%= order.product.name %>
+            </h4>
+            <%= image_tag(order.product.image_url, class: "img-responsive") %>
+        <% end %>
+
+        <h4 class="text-danger text-center">
+          <%= "Price: #{order.total} $" %>
+        </h4>
+        <br>
+
+        <div class="details">
+
+          <p align="center"><%= link_to 'Show', order, class: "btn btn-defualt btn-link btn-lg" %></p>
+        </div>
+      </div>
+      <!-- /col -->
+  <% end %>
+
+  <%= link_to 'Back', root_path, class: "btn btn-defualt btn-link btn-lg" %>
+</div>
+

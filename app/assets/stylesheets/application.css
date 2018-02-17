@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require jquery.raty
+ *= require_self
+*/
+
+.login-header {
+    background: #FF6666;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+
+}
+
+.seesion_new{
+  padding-top: 0px;
+    width: 400px;
+    margin: 18px auto;
+    font-size: 16px;
+    background-color: white;
+}
+.login-container {
+    background-color: white;
+    padding-left: 50px;;
+    width: 400px;
+    padding-right: 100px;
+    padding-top: 20px;
+}
+
+.login .field {
+    padding: 8px;
+    text-align: center;
+}
+
+.login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+
+
+.navbar-fixed-top{
+    background-color:#00263b;
+
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#00263b;
+    color: white;
+    text-align: center;
+}
+.navbar-default .navbar-nav > li > a{
+    color: white;
+}

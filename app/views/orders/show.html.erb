@@ -1,0 +1,19 @@
+<div class="row card description" style="margin-top: 100px;" align="center">
+  <h1>
+    Order #
+    <%= @order.id %>:
+    <%= link_to @order.product.name, @order.product %>
+  </h1>
+  <%= image_tag(@order.product.image_url, class: "img-responsive") %>
+  <p>
+    <strong>description:</strong>
+    <%= @order.product.description %>
+  </p>
+  <p>
+    <strong>price:
+      <%= @order.product.price %>$</strong>
+  </p>
+  <div class="text-center">
+    <%= link_to 'Browse All Orders', orders_path, class: "btn btn-defualt btn-link btn-lg" %></div>
+
+</div>

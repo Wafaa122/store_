@@ -1,0 +1,25 @@
+
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+  <h1>Products</h1>
+<div class="row prod-inner">
+      <% cache(cache_key_for_products) do %>
+          <% @products.each do |product| %>
+              <%= render product %>
+          <% end %>
+      <% end %>
+</div>
+  <div class="digg_pagination">
+    <% if @flag == false %>
+        <%= will_paginate @products %>
+    <% end %>
+  </div>
+</div>
+<% if signed_in? && current_user.admin? %>
+    <div class="new-product">
+      <%=link_to 'New Product', new_product_path %>
+    </div>
+<% end %>
+
+
