@@ -75,3 +75,4 @@ gem "factory_bot_rails", "~> 4.0"
 end
 gem 'stripe'
 gem 'dalli'
+gem 'redis-rails'

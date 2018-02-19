@@ -1,8 +1,5 @@
-# Be sure to restart your server when you modify this file.
-
-# ActiveSupport::Reloader.to_prepare do
-#   ApplicationController.renderer.defaults.merge!(
-#     http_host: 'example.org',
-#     https: false
-#   )
-# end
+if Rails.env.production?
+  $redis = Redis.new(url: ENV["REDIS_URL"])
+else
+  $redis = Redis.new(host: 'localhost', port: 6379)
+end 
