@@ -38,6 +38,7 @@
         <%= link_to 'Back', products_path %>
         <%= render 'new_comment' %>
         <% if @comments.count > 0 %>
+            <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
         <%= render 'comments' %>
         <% end %>
 
