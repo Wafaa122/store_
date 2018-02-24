@@ -11,18 +11,10 @@
 </head>
 <style>
   body{
-    padding: 50px;
+    padding: 70px;
   }
-  login-header {
-    background: #FF6666;
-    padding: 20px;
-    font-size: 1.4em;
-    font-weight: normal;
-    text-align: center;
-    text-transform: uppercase;
-    color: #fff;
 
-  }
+
 
   .seesion_new{
     padding-top: 0px;
@@ -59,7 +51,7 @@
 
 
   .navbar-fixed-top{
-    background-color:#00263b;
+    background-color:black;
 
   }
   .footer {
@@ -72,22 +64,39 @@
     text-align: center;
   }
   .navbar-default .navbar-nav > li > a{
-    color: white;
+    color: #F7F7F7;
+    font-size: 17px;
   }
+  #logo-navbar-middle {
+
+    width: 100px;
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+  }
+  .btn {
+    display: inline;
+
+  }
+    .navbar-form{
+      display: inline;
+    }
+
 </style>
 
 <body>
 <div class ="container_fluid">
-
-  <nav class="navbar navbar navbar-fixed-top" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
 
+      </button>
+      <li><a href="#"><img id="logo-navbar-middle" src="https://QUALR431.expandcart.com/image/QUALR431/data/aurora/DefLogo/LogoWEN.png"  alt="Logo Thing main logo"></a></li>
+
+      <link href="https://QUALR431.expandcart.com/image/QUALR431/data/DemoImages/Logo/favicon.png" rel="icon" />
     </div>
 
 
@@ -95,6 +104,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="top-navbar-1">
       <ul class="nav navbar-nav navbar-left">
+
         <li><%= link_to 'Home', simple_pages_index_path%></li>
         <li><%= link_to 'Products', products_path%></li>
         <li><%= link_to 'About Us', simple_pages_about_path%></li>
@@ -102,30 +112,30 @@
         <li><%= link_to 'Order', orders_path%></li>
         <li><%= link_to 'Users', users_path %></li>
 
+        <!-- Sign up Log in -->
 
-        <li>
-          <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-          <% else %>
-              <%= link_to('Login', new_user_session_path) %>
-          <% end %>
-        </li>
+      <li>
+        <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <% else %>
+            <%= link_to('Login', new_user_session_path) %>
+        <% end %>
+      </li>
 
       </ul>
-
+      <div class="navbar-form navbar-right">
       <!-- Search Box -->
-      <%= form_tag("/products", method: "get", class:"navbar-form navbar-right") do %>
+      <%= form_tag("/products", method: "get") do %>
           <div class="form-group">
             <%= label_tag(:q, "Search for:", class:"hidden") %>
             <%= text_field_tag(:q, "", type:"text", class:"form-control") %>
           </div>
           <%= submit_tag("Search", class:"btn btn-default") %>
       <% end %>
-    </div>
-  </nav>
+
+</div>
 </div>
 </nav>
-
 <%= yield %>
 <footer>
   <div class ="footer">

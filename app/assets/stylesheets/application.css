@@ -73,6 +73,10 @@
     color: white;
     text-align: center;
 }
-.navbar-default .navbar-nav > li > a{
+.navbar-default .navbar-nav > li > a {
     color: white;
+
+}
+.navbar-collapse.collapse{
+    hight :70px !important;
 }
