@@ -1,11 +1,11 @@
 <div class="Container-fluid">
+  <div class="product">
   <% cache product do %>
 
 <div class="col-sm-2 col-md-4">
     <p><%= image_tag(product.image_url, class: "img-responsive") %>
     </p>
     <h1><%= link_to product.name, product %></h1>
-    
     <p> <strong>price</strong> <%= product.price %> €</p>
     <p> <%= link_to 'Show', product %>
       <%= link_to 'Edit', edit_product_path(product) %>
@@ -14,4 +14,5 @@
 
 
   <% end %>
+  </div>
       </div>
