@@ -1,22 +1,13 @@
 <div class="row">
-  <hr>
-  <div class="col-md-8 col-lg-8 col-xs-12 comment-user-name">
-    <p> <%= comment.user.first_name %> <%= comment.user.last_name %> </p>
-  </div>
-  <div class="col-md-4 col-lg-4 col-xs-12">
-    <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
-  </div>
-  <div class="col-md-12 col-lg-12 col-xs-12">
-    <div class="col-md-10 col-lg-10 col-xs-10">
-      <p> <%= comment.body %> </p>
-    </div>
-    <div class="col-md-2 col-lg-2 col-xs-2">
-      <% if current_user && current_user.admin? %>
-          <%= link_to ('<span class="glyphicon glyphicon-trash"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
-  </div>
-  <div class="col-md-12 col-lg-12 col-xs-12 star">
-    <div class="rated" data-score="<%= comment.rating %>"></div>
-  </div>
+
+  <p>
+    <%= comment.user.first_name %> <small><em><%= "#{ time_ago_in_words(comment.created_at)} ago" %></em></small>
+    <% if current_user && current_user.admin? %>
+        <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe,
+                    product_comment_path(comment.product, comment),
+                    method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
+  </p>
+  <div class="rated" data-score="<%= comment.rating %>"></div>
+  <p><%= comment.body %></p>
 </div>
