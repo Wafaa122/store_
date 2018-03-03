@@ -14,7 +14,9 @@
  *= require jquery.raty
  *= require_self
 */
-
+.body{
+    padding :20px;
+}
 .login-header {
     background: #FF6666;
     padding: 20px;
