@@ -25,7 +25,6 @@
     color: #fff;
 
 }
-
 .seesion_new{
   padding-top: 0px;
     width: 400px;
@@ -57,9 +56,6 @@
     font-family: inherit;
     font-size: 0.95em;
 }
-
-
-
 .navbar-fixed-top{
     background-color:#00263b;
 
@@ -74,26 +70,40 @@
     text-align: center;
 }
 .navbar-default .navbar-nav > li > a {
-    color: white;
+    color: black;
 
 }
 .navbar-collapse.collapse{
     hight :70px !important;
 }
+.modal-body {
+
+    padding: 0px !important;
+
+}
+.modal-content{
+    width: 85%;
+}
+.fo_pass{
+padding: 50px;
+}
+.reg_new{
+padding: 0px;
+}
+.contact_page{
+    padding: 50px;
+}
+#rcorners2 {
+    border-radius: 15px 50px 30px;
+    background:blanchedalmond;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    display-list: none;
+}
 .login{
-    background-image: url("login1.jpeg");
-    /* Background image is centered vertically and horizontally at all times */
-    background-position: center center;
-
-    /* Background image doesn't tile */
-    background-repeat: no-repeat;
-
-    /* Background image is fixed in the viewport so that it doesn't move when
-       the content's height is greater than the image's height */
-    background-attachment: fixed;
-
-    /* This is what makes the background image rescale based
-       on the container's size */
-    background-size: cover;
-
+    padding: 30px;
+}
+.reg_new{
+    padding: 45px;
 }

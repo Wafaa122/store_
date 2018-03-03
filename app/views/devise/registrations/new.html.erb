@@ -1,5 +1,15 @@
-<div class="container">
-<h2>Sign up</h2>
+
+  <div class="Container-fluid">
+    <div class="reg_new">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="text-center">Sign up</h1>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <center>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -28,4 +38,12 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+          </center>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 </div>

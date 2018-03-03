@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
@@ -12,19 +13,14 @@
 <style>
   body{
     font-size: small;
-    padding-top: 22px;
-    padding-bottom: 0px;
     font-family: 'Sumana', serif;
     font-family: 'Roboto Mono', monospace;
     font-family: 'Nunito', sans-serif;
-
   }
-
   .login .field {
     padding: 8px;
     text-align: center;
   }
-
   .login input {
     box-sizing: border-box;
     display: block;
@@ -36,9 +32,6 @@
     font-family: inherit;
     font-size: 0.95em;
   }
-
-
-
   .navbar-fixed-top{
     background-color:#00263b;
 
@@ -55,21 +48,19 @@
   .navbar-default .navbar-nav > li > a{
     color: #F7F7F7;
     font-size: 17px;
+    font-family: 'Playfair Display', serif;
   }
   #logo-navbar-middle {
-
     width: 100px;
     padding-top: 10px!important;
     padding-bottom: 10px!important;
   }
   .btn {
     display: inline;
-
   }
-    .navbar-form{
-      display: inline;
-    }
-
+  .navbar-form{
+    display: inline;
+  }
 </style>
 
 <body>
@@ -103,34 +94,34 @@
 
         <!-- Sign up Log in -->
 
-      <li>
-        <% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-        <% else %>
-            <%= link_to('Login', new_user_session_path) %>
-        <% end %>
-      </li>
+        <li>
+          <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+          <% else %>
+              <%= link_to('Login', new_user_session_path) %>
+          <% end %>
+        </li>
 
       </ul>
       <div class="navbar-form navbar-right">
-      <!-- Search Box -->
-      <%= form_tag("/products", method: "get") do %>
-          <div class="form-group">
-            <%= label_tag(:q, "Search for:", class:"hidden") %>
-            <%= text_field_tag(:q, "", type:"text", class:"form-control") %>
-          </div>
-          <%= submit_tag("Search", class:"btn btn-default") %>
-      <% end %>
+        <!-- Search Box -->
+        <%= form_tag("/products", method: "get") do %>
+            <div class="form-group">
+              <%= label_tag(:q, "Search for:", class:"hidden") %>
+              <%= text_field_tag(:q, "", type:"text", class:"form-control") %>
+            </div>
+            <%= submit_tag("Search", class:"btn btn-default") %>
+        <% end %>
 
-</div>
-</div>
-</nav>
-<%= yield %>
-<footer>
-  <div class ="footer">
-    &copy; 2017 Wafaa N.Abu Dahrouj.
-  </div>
-</footer>
+      </div>
+    </div>
+  </nav>
+  <%= yield %>
+  <footer>
+    <div class ="footer">
+      &copy; 2017 Wafaa N.Abu Dahrouj.
+    </div>
+  </footer>
 </div>
 </body>
 </html>

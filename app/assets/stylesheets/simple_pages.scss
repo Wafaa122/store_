@@ -1,7 +1,44 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.carousel-inner{
-  padding-left: 0px!important;
-  padding-right: 0px!important;
+.panel{
+  background-color: black!important;
+  color:  	#DDA0DD;
+  font-family: 'Roboto Mono', monospace;
+  font-size: x-large;
+  font-weight: 600;
+  text-align: center;
 }
+
+
+.about_page{
+
+  font-family: 'Playfair Display', serif;
+  padding-top: 70px;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;}

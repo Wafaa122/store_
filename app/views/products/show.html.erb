@@ -33,9 +33,10 @@
             <%= form.hidden_field :product_id, :value =>  @product.id %>
             <%= render partial: 'shared/stripe_checkout_button' %>
         <% end %>
-
+        <% if signed_in? && current_user.admin? %>
         <%= link_to 'Edit', edit_product_path(@product) %> |
         <%= link_to 'Back', products_path %>
+        <% end %>
         <%= render 'new_comment' %>
         <% if @comments.count > 0 %>
             <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
