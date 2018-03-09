@@ -1,19 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require jquery.raty
- *= require_self
-*/
+/* * This is a manifest file that'll be compiled into application.css, which will include all the files * listed below. * * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's * vendor/assets/stylesheets directory can be referenced here using a relative path. * * You're free to add application-wide styles to this file and they'll appear at the bottom of the * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS * files in this directory. Styles in this file should be added after the last require_* statement. * It is generally better to create a new file per style scope. * *= require_tree . *= require jquery.raty *= require_self */
 .body{
     padding :20px;
 }
@@ -25,10 +10,9 @@
     text-align: center;
     text-transform: uppercase;
     color: #fff;
-
 }
 .seesion_new{
-  padding-top: 0px;
+    padding-top: 0px;
     width: 400px;
     margin: 18px auto;
     font-size: 16px;
@@ -36,17 +20,16 @@
 }
 .login-container {
     background-color: white;
-    padding-left: 50px;;
+    padding-left: 50px;
+;
     width: 400px;
     padding-right: 100px;
     padding-top: 20px;
 }
-
 .login .field {
     padding: 8px;
     text-align: center;
 }
-
 .login input {
     box-sizing: border-box;
     display: block;
@@ -60,7 +43,6 @@
 }
 .navbar-fixed-top{
     background-color:#00263b;
-
 }
 .footer {
     position: fixed;
@@ -73,26 +55,22 @@
 }
 .navbar-default .navbar-nav > li > a {
     color: black;
-
 }
 .modal-body {
-
     padding: 0px !important;
-
 }
 .modal-content{
     width: 85%;
 }
 .fo_pass{
-padding: 50px;
+    padding: 50px;
 }
 .reg_new{
-padding: 0px;
+    padding: 0px;
 }
 .contact_page{
     padding: 50px;
 }
-
 .login{
     padding: 30px;
 }
