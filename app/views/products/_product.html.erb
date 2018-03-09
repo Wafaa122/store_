@@ -1,20 +1,19 @@
 <div class="Container-fluid">
   <div class="product_page">
-  <% cache product do %>
-
-<div class="col-sm-2 col-md-4">
-    <p><%= image_tag(product.image_url, class: "img-responsive") %>
-    </p>
-    <h1><%= link_to product.name, product %></h1>
-    <p> <strong>price</strong> <%= product.price %> €</p>
-    <p> <%= link_to 'Show', product %>
-      <% if signed_in? && current_user.admin? %>
-      <%= link_to 'Edit', edit_product_path(product) %>
-      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      <% end %>
-  </div><!-- /col -->
-
-
-  <% end %>
+    <% cache product do %>
+        <div class="col-sm-2 col-md-4">
+          <p> <%= link_to image_tag(product.image_url, class:"img-responsive"), product %>
+          </p>
+          <h1><%= link_to product.name, product %></h1>
+          <p> <strong>price</strong> <%= product.price %> €</p>
+          <% if signed_in? && current_user.admin? %>
+              <%= link_to 'Show', product %>
+              <%= link_to 'Edit', edit_product_path(product) %>
+              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+        </div>
+        <!-- /col -->
+    <% end %>
   </div>
-      </div>
+</div>
+

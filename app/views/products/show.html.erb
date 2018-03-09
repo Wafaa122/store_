@@ -1,58 +1,51 @@
-<div class="Container-fluid content-container">
-  <% cache @product do %>
-
-
-
-<p id="notice"><%= notice %></p>
-
 
   <div class="container-fluid">
-    <div class="row" data-product-id="<%= @product.id %>">
-      <div class="col-xs-12 col-sm-6">
-        <div id="prod-img">
-          <%= image_tag(@product.image_url, width: "350", class: "img-zoom") %>
+  <div class = "show-page">
+    <% cache @product do %>
+        <p id="notice"><%= notice %></p>
+        <div class="row" data-product-id="<%= @product.id %>">
+          <div class="col-xs-12 col-sm-6">
+            <div id="prod-img">
+              <%= image_tag(@product.image_url, width: "350",  class: "img-responsive img-zoom" ) %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <h2 id="prod-name"><%= @product.name.upcase %></h2>
+            <p>
+              <strong>description</strong>
+              <%= @product.description %>
+            </p>
+            <p>
+              <strong>price</strong>
+              <%= @product.price %> €
+            </p>
+            <p>
+              <strong>colour:</strong>
+              <%= @product.colour %>
+            </p>
+            <%= form_with(url: '/payments/create') do |form| %>
+                <%= form.hidden_field :product_id, :value =>  @product.id %>
+                <%= render partial: 'shared/stripe_checkout_button' %>
+            <% end %>
+            <% if signed_in? && current_user.admin? %>
+                <%= link_to 'Edit', edit_product_path(@product) %> |
+                <%= link_to 'Back', products_path %>
+            <% end %>
+
+            <%= render 'new_comment' %>
+            <% if @comments.count > 0 %>
+                <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+                <%= render 'comments' %>
+            <% end %>
+            <p>Average Rating:
+            <div class="rated" data-score="<%= @product.average_rating %>"></div>
+            </p>
+            <div class="pagination">
+              <%= will_paginate @comments %>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <h2 id="prod-name"><%= @product.name.upcase %></h2>
-        <p>
-          <strong>description</strong>
-          <%= @product.description %>
-        </p>
-
-        <p>
-          <strong>price</strong>
-          <%= @product.price %> €
-        </p>
-
-        <p>
-          <strong>colour:</strong>
-          <%= @product.colour %>
-        </p>
-        <%= form_with(url: '/payments/create') do |form| %>
-            <%= form.hidden_field :product_id, :value =>  @product.id %>
-            <%= render partial: 'shared/stripe_checkout_button' %>
-        <% end %>
-        <% if signed_in? && current_user.admin? %>
-        <%= link_to 'Edit', edit_product_path(@product) %> |
-        <%= link_to 'Back', products_path %>
-        <% end %>
-        <%= render 'new_comment' %>
-        <% if @comments.count > 0 %>
-            <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-        <%= render 'comments' %>
-        <% end %>
-
-        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
-
-
-
-        <div class="pagination">
-          <%= will_paginate @comments %>
-        </div>
-      </div>
+    <% end %>
     </div>
-  </div>
-</div>
+    </div>
 
-  <% end %>

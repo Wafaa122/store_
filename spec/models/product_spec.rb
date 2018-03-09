@@ -7,13 +7,12 @@ describe Product do
       @product = FactoryBot.create(:product)
       @product = Product.create!(name: "shoes", description: "nice", price: 20 , colour: "violet" , image_url: "6.jpg")
       @user = User.create!(first_name: "Wafaa", last_name: "Adnan", email: "Wafaa@gmail.com", password: "123456")
-      @product.comments.create!(rating: 1, user: @user, body: "WOOOW")
-      @product.comments.create!(rating: 2, user: @user, body: "Just looks to geeky to me?")
-      @product.comments.create!(rating: 3, user: @user, body: "nice")
-      @product.comments.create!(rating: 4, user: @user, body: "Love it!")
-      @product.comments.create!(rating: 5, user: @user, body: "awsomeness!")
-    end
 
+
+    5.times do |index|
+      @product.comments.create!(rating: index + 1, user: @user, body: "test")
+    end
+    end
     it "returns the average rating of the comments" do
       expect(@product.average_rating).to eq 3
     end

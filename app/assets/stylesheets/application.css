@@ -75,9 +75,6 @@
     color: black;
 
 }
-.navbar-collapse.collapse{
-    hight :70px !important;
-}
 .modal-body {
 
     padding: 0px !important;
@@ -95,14 +92,7 @@ padding: 0px;
 .contact_page{
     padding: 50px;
 }
-#rcorners2 {
-    border-radius: 15px 50px 30px;
-    background:blanchedalmond;
-    padding: 20px;
-    width: 200px;
-    height: 150px;
-    display-list: none;
-}
+
 .login{
     padding: 30px;
 }

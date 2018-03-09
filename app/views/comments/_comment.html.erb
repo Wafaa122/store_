@@ -1,5 +1,4 @@
 <div class="row">
-
   <p>
     <%= comment.user.first_name %> <small><em><%= "#{ time_ago_in_words(comment.created_at)} ago" %></em></small>
     <% if current_user && current_user.admin? %>
